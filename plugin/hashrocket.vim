@@ -46,15 +46,15 @@ endfunction
 if &grepprg ==# 'grep -n $* /dev/null'
   set grepprg=grep\ -rnH\ --exclude='.*.swp'\ --exclude='*~'\ --exclude='*.log'\ --exclude=tags\ $*\ /dev/null
 endif
-set list            " show trailing whiteshace and tabs
+"set list            " show trailing whiteshace and tabs
 if &statusline == ''
   set statusline=[%n]\ %<%.99f\ %h%w%m%r%{HTry('CapsLockStatusline')}%y%{HTry('rails#statusline')}%{HTry('fugitive#statusline')}%#ErrorMsg#%{HTry('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 endif
 
-if has('persistent_undo')
-  set undofile
-  set undodir^=~/.vim/tmp//,~/Library/Vim/undo
-endif
+"if has('persistent_undo')
+"  set undofile
+"  set undodir^=~/.vim/tmp//,~/Library/Vim/undo
+"endif
 
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_rails = 1
@@ -162,7 +162,7 @@ iabbrev rdebug    require 'ruby-debug'; Debugger.start; Debugger.settings[:autoe
 iabbrev bpry      require 'pry'; binding.pry;
 iabbrev ipry      require IEx; IEx.pry;
 
-xnoremap <leader>g y :Ggrep <C-R>"<CR>
+"xnoremap <leader>g y :Ggrep <C-R>"<CR>
 
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
